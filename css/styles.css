@@ -1,0 +1,28 @@
+table {
+    border: 0 none;
+    border-collapse: collapse;
+}
+
+table td {
+    border: 1px solid #c2c2c2;
+    padding: 5px;
+}
+
+/*
+ cubic-bezier generator:
+ http://cubic-bezier.com/
+ */
+
+.controls {
+    opacity: 0;
+    position: absolute;
+    transform: translate(-50px, -50px);
+    transition: .5s cubic-bezier(0,1.45,1,-1.36) transform;
+    visibility: hidden;
+}
+
+.box:hover .controls {
+    opacity: 1;
+    transform: translate(90px, -35px);
+    visibility: visible;
+}
