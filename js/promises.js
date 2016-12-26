@@ -19,9 +19,9 @@
     }];
 
     function getPhone(phoneId) {
-        if (phoneId && typeof phoneId === 'string') {
+        if (phoneId && typeof phoneId === `string`) {
             for (const phone of phones) {
-                if (phone.id === phoneId) {
+                if (Object.is(phone.id, phoneId)) {
                     return Promise.resolve(phone);
                 }
             }

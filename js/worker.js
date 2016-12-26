@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
+    /**
+     * @param {Object} msg
+     * @function
+     */
     onmessage = function (msg) {
         const filtered = filterUnique(msg.data);
 
@@ -18,7 +22,7 @@
      * @return {Array|*} Returns either a filtered array or the original data if the passed argument is not an array
      */
     function filterUnique(array) {
-        if (array.constructor !== Array) {
+        if (!Array.isArray(array)) {
             console.warn(`${new Date()}: the passed argument is not an array, so nothing to do:`, array);
 
             return array;
@@ -27,7 +31,7 @@
         const unique = [];
 
         for (const val of array) {
-            if (!!val && unique.indexOf(val) < 0) {
+            if (val && !unique.includes(val)) {
                 unique.push(val);
             }
         }

@@ -110,7 +110,7 @@
     }
 
     function filterUniqueES6(array) {
-        if (array.constructor !== Array) {
+        if (!Array.isArray(array)) {
             console.error(`${new Date()}: the passed argument is not an array:`, array);
 
             return array;
@@ -119,7 +119,7 @@
         const unique = [];
 
         for (const val of array) {
-            if (!!val && unique.indexOf(val) < 0) {
+            if (val && !unique.includes(val)) {
                 unique.push(val);
             }
         }
