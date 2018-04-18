@@ -64,4 +64,11 @@
         arr.push(obj[keys[len]]);
     }
     console.timeEnd('while');
+
+    // Object.entries()
+    console.time('objectentries');
+    for (const [ key, value ] of Object.entries(obj)) {
+        arr.push(value);
+    }
+    console.timeEnd('objectentries');
 })();
