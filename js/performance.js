@@ -1,3 +1,13 @@
+/**
+ * File to compare time execution of various built-in and custom solutions
+ */
+
+// for...of
+// vs Object.keys().forEach()
+// vs Object.values().forEach()
+// vs Object.keys() + for...of loop
+// vs Object.keys() + regular for loop
+// vs Object.keys() + while loop
 (function () {
     'use strict';
 
@@ -30,7 +40,7 @@
     Object.values(obj).forEach(value => arr.push(value));
     console.timeEnd('objectvalue');
 
-    // Object.values() + for...of loop
+    // Object.keys() + for...of loop
     console.time('forof');
     const keys3 = Object.keys(obj);
     for (const key of keys3) {
@@ -38,7 +48,7 @@
     }
     console.timeEnd('forof');
 
-    // Object.values() + regular for loop
+    // Object.keys() + regular for loop
     console.time('for');
     const keys2 = Object.keys(obj);
     for (let i = keys2.length; i--;) {
